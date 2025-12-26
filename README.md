@@ -1,4 +1,4 @@
-# ai-housing-inspection-snowflake-
+# Ai-Housing-Inspection-Snowflake
 # 🏠 AI-Assisted Housing Inspection System (Snowflake Cortex)
 
 ## Overview
