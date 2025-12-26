@@ -1,12 +1,11 @@
-# Ai-Housing-Inspection-Snowflake
 # 🏠 AI-Assisted Housing Inspection System (Snowflake Cortex)
 
 ## Overview
-This project demonstrates an AI-powered housing inspection system built entirely on Snowflake.  
+This project demonstrates an AI-powered housing inspection system built entirely on Snowflake.
 It uses Snowflake Cortex LLMs to classify inspection findings, assess risk, estimate repair costs, and generate natural-language safety reports.
 
 ## Problem
-Manual housing inspections are slow, subjective, and difficult to scale.  
+Manual housing inspections are slow, subjective, and difficult to scale.
 Critical safety issues may go unnoticed, putting families at risk.
 
 ## Solution
@@ -20,15 +19,29 @@ Critical safety issues may go unnoticed, putting families at risk.
 - Snowflake Tables & Views
 - Snowflake Cortex LLMs
 - Snowflake Streams & Tasks
-- Snowflake Streamlit
+- Streamlit dashboard querying Snowflake tables
 
 ## Repository Structure
-- `sql/` → Database setup, AI views, aggregations
-- `streamlit/` → Interactive dashboard
-- `outputs/` → Sample AI-generated outputs
+snowflake-ai-project/
+│
+├── sql/
+│ ├── 01_setup_tables.sql -- CREATE TABLE statements and sample data
+│ ├── 02_ai_views.sql -- AI classification views (Cortex)
+│ ├── 03_risk_aggregation.sql -- Room & property risk calculations
+│ ├── 04_dashboard_views.sql -- Views used by Streamlit
+│
+├── streamlit/
+│ └── app.py -- Interactive dashboard
+│
+├── outputs/
+│ └── sample_ai_outputs.md -- Sample results from AI queries
+│
+└── README.md
+
+markdown
+Copy code
 
 ## AI Usage
-This project uses:
 - `SNOWFLAKE.CORTEX.COMPLETE` for:
   - Defect classification
   - Severity detection
@@ -36,10 +49,15 @@ This project uses:
 - `SNOWFLAKE.CORTEX.SENTIMENT` for confidence scoring
 
 ## Limitations & Future Scope
-Vision-based inspection using images requires `CORTEX.CHAT`, which is currently unavailable in this account.
-The system architecture is vision-ready and can be extended to multimodal inspection once enabled.
+- Vision-based inspection using images requires `CORTEX.CHAT`, which is currently unavailable in this account.
+- System architecture is **vision-ready** and can be extended to multimodal inspection once enabled.
 
 ## How to Run
-1. Execute SQL files in order from `sql/`
-2. Open Streamlit app from Snowflake
-3. Add inspection findings and view AI-generated insights
+1. **SQL Setup**
+   - Run files from `sql/` in order (`01_setup_tables.sql` → `04_dashboard_views.sql`) in Snowflake.
+   - These create tables, insert sample data, and generate AI-powered views.
+2. **Streamlit Dashboard**
+   - Open `streamlit/app.py` in Snowflake.
+   - Interact with tabs for property overview, AI-powered inspection entry, AI performance, and all properties.
+3. **Verify Outputs**
+   - `outputs/sample_ai_outputs.md` contains example AI-generated classifications and summaries.
