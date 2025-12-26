@@ -33,8 +33,8 @@ snowflake-ai-project/
 ├── streamlit/
 │ └── app.py -- Interactive dashboard
 │
-├── outputs/
-│ └── sample_ai_outputs.md -- Sample results from AI queries
+├── architecture/
+│ └── architecture.png
 │
 └── README.md
 
