@@ -38,8 +38,7 @@ snowflake-ai-project/
 │
 └── README.md
 
-markdown
-Copy code
+
 
 ## AI Usage
 - `SNOWFLAKE.CORTEX.COMPLETE` for:
